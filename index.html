@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         .geist-font {
             font-family: "Geist", sans-serif;
@@ -44,17 +47,35 @@
     <hr class="text-[#E6E7E9] m-8">
 
     <!-- Available Jobs Section -->
-     <section id="available-jobs-box" class="w-[70%] mx-auto flex justify-between mb-6">
+    <section id="available-jobs-box" class="w-[70%] mx-auto flex justify-between mb-6">
         <div id="available-job" class="text-xl">Available Jobs</div>
         <div id="jobsCount">8 jobs</div>
-     </section>
+    </section>
 
 
      <!-- Category Button Section -->
-      <section id="categor-btn-container" class="w-[70%] mx-auto">
+    <section id="categor-btn-container" class="w-[70%] mx-auto mb-4">
         <button class="font-semibold bg-[#3B82F6] px-3.5 py-2.5 rounded-lg">All</button>
         <button class="font-semibold bg-white px-3.5 py-2.5 mx-2 rounded-lg">Interview</button>
         <button class="font-semibold bg-white px-3.5 py-2.5 rounded-lg">Rejected</button>
-      </section>
+    </section>
+
+
+      <!-- Card Container -->
+    <section class="allCards w-[70%] mx-auto">
+        <div class="flex justify-between bg-white p-6 rounded-lg">
+            <div class="card">
+                <h2 class="font-semibold text-[18px] leading-[26px] mb-1">Mobile First Corp</h2>
+                <p class="text-[#64748B] leading-6 mb-5">React Native Developer</p>
+                <p class="text-[#64748B] leading-5 mb-5">Remote  •  Full-time  •  $130,000  -  $175,000</p>
+                <button class="bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">Not Applied</button>
+                <p class="text-[#323B49] mb-5 leading-5">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+                <button id="btn-interview" class="text-[#10B981] border-[#10B981] border py-2 px-3 mr-2">INTERVIEW</button>
+                <button id="btn-rejected" class="text-[#EF4444] border-[#EF4444] border py-2 px-3 mr-2">REJECTED</button>
+            </div>
+            <div><i class="fa-solid fa-trash-can"></i></div>
+        </div>
+ 
+    </section>
 </body>
 </html>
