@@ -31,20 +31,20 @@ function toggleStyle(id) {
     rejectedCategory.classList.add('bg-white', 'text-black');
 
     // if any button has black then remove
-    allCategory.classList.remove('bg-[#3B82F6]');
-    interviewCategory.classList.remove('bg-[#3B82F6]');
-    rejectedCategory.classList.remove('bg-[#3B82F6]');
+    allCategory.classList.remove('bg-[#3B82F6]', 'text-white');
+    interviewCategory.classList.remove('bg-[#3B82F6]', 'text-white');
+    rejectedCategory.classList.remove('bg-[#3B82F6]', 'text-white');
 
     // console.log(id);
     const selected = document.getElementById(id);//this is the button that clicked for filter
 
     currentStatus = id;
     console.log(currentStatus);
-    // console.log(selected);
+    // // console.log(selected);
 
     // adding black bg for current button
-    selected.classList.remove('bg-white');
-    selected.classList.add('bg-[#3B82F6]');
+    selected.classList.remove('bg-white', 'text-black');
+    selected.classList.add('bg-[#3B82F6]', 'text-[#ffffff]');
     // step 1 finish
 
 }
