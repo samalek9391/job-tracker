@@ -1,0 +1,28 @@
+1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
+
+    => By using getElementById(), an element with a specific ID is selected, and the necessary functionality using JavaScript can be applied. By using getElementByClassName, elements with a class name are selected, and the necessary functionality using JavaScript can be applied. On the other hand, by querySelector, the first element that matches a specified CSS selector can be selected. QuerySelector can select elements by id, class, tag name, or any CSS selectors. And the last querySelectorAll is similar to querySelector; moreover, it selects all elements that match a specified CSS selector.
+
+2. How do you create and insert a new element into the DOM?
+
+    => In JavaScript, a new element can be created and inserted into the DOM using specific DOM methods. Below are all the steps mentioned:
+	    Step 1: First creating a new element by using document.createElement()
+        Step 2: Add necessary inner text and inner HTML.
+        Step 3: Insert the created element into the parent element by using the appendChild () method.
+
+3. What is Event Bubbling? And how does it work?
+    => Event Bubbling is a method in the DOM where childElement can be found by targeting the parent element and vice versa.
+
+    How It Works: When an event (such as a click) occurs on an element. The event is first triggered on the target element. Then it moves upward to its parent element. Then to the grandparent element. This continues until it reaches the document object.
+
+4. What is Event Delegation in JavaScript? Why is it useful?
+
+    => Event Delegation is a method in JavaScript where, instead of adding event listeners to individual child elements, we can add a single event listener to their parent element to handle events of all child elements. Event delegation works based on event bubbling, where events move from the target element up to its parent elements.
+
+    Usefulness of Event Delegation: 
+        Improves performance by reducing the number of event listeners.
+        Works dynamically with newly added elements.
+        Makes code shorter and easier to maintain.
+
+5. What is the difference between preventDefault() and stopPropagation() methods?
+
+    The main difference between preventDefault() and stopPropagation() methods is that the preventDefault() method is used to stop the default behavior of an element. On the other hand, stopPropagation() is used to stop event bubbling, which means the event will not move from the child element to its parent elements.
