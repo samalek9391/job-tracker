@@ -57,7 +57,7 @@ function toggleStyle(id) {
     } else if (id == 'allCategory'){
         allCards.classList.remove('hidden');
         filterSection.classList.add('hidden');
-    }else if (id == rejectedCategory){
+    }else if (id == 'rejectedCategory'){
          allCards.classList.add('hidden');
          filterSection.classList.remove('hidden');
          renderReject ()
@@ -68,76 +68,103 @@ function toggleStyle(id) {
 
 mainContainer.addEventListener('click', function(event){
 
-    if(event.target.classList.contains('btn-interview')){
-        const parentNode = event.target.parentNode.parentNode;
-        const companyName = parentNode.querySelector('.companyName').innerText;
-        const postName = parentNode.querySelector('.postName').innerText;
-        const jobDetails = parentNode.querySelector('.jobDetails').innerText;
-        const status = parentNode.querySelector('.status').innerText;
-        const jobExperience = parentNode.querySelector('.jobExperience').innerText;
+   if(event.target.classList.contains('btn-interview')){
 
-        parentNode.querySelector('.status').innerText = 'Interviwed';
-    
-        const cardInfo = {
-            companyName, 
-            postName, 
-            jobDetails,
-            status: 'Interviwed', 
-            jobExperience
+    const parentNode = event.target.closest('.flex');
+
+    const companyName = parentNode.querySelector('.companyName').innerText;
+    const postName = parentNode.querySelector('.postName').innerText;
+    const jobDetails = parentNode.querySelector('.jobDetails').innerText;
+    const jobExperience = parentNode.querySelector('.jobExperience').innerText;
+
+    parentNode.querySelector('.status').innerText = 'Interviewed';
+
+    const cardInfo = {
+        companyName,
+        postName,
+        jobDetails,
+        status: 'Interviewed',
+        jobExperience
     }
-   
-    const interviewExist = interviewList.find(item=> item.companyName == cardInfo.companyName);
-    
+
+    const interviewExist = interviewList.find(item => item.companyName === companyName);
 
     if(!interviewExist){
         interviewList.push(cardInfo);
     }
 
-    rejectedList = rejectedList.filter(item=> item.companyName != cardInfo.companyName);
+    rejectedList = rejectedList.filter(item => item.companyName !== companyName);
 
-    if(currentStatus == "rejectedCategory"){
-        renderReject()
+    if(currentStatus === "interviewCategory"){
+        renderInterview();
+    }
+
+    if(currentStatus === "rejectedCategory"){
+        renderReject();
     }
 
     countCalculator();
 
     // renderInterview ()
 
-    } else if (event.target.classList.contains('btn-rejected')){
-        const parentNode = event.target.parentNode.parentNode;
-        const companyName = parentNode.querySelector('.companyName').innerText;
-        const postName = parentNode.querySelector('.postName').innerText;
-        const jobDetails = parentNode.querySelector('.jobDetails').innerText;
-        const status = parentNode.querySelector('.status').innerText;
-        const jobExperience = parentNode.querySelector('.jobExperience').innerText;
+    } else if(event.target.classList.contains('btn-rejected')){
 
-        parentNode.querySelector('.status').innerText = 'Rejected';
-    
-        const cardInfo = {
-            companyName, 
-            postName, 
-            jobDetails,
-            status : 'Rejected', 
-            jobExperience
+    const parentNode = event.target.closest('.flex');
+
+    const companyName = parentNode.querySelector('.companyName').innerText;
+    const postName = parentNode.querySelector('.postName').innerText;
+    const jobDetails = parentNode.querySelector('.jobDetails').innerText;
+    const jobExperience = parentNode.querySelector('.jobExperience').innerText;
+
+    parentNode.querySelector('.status').innerText = 'Rejected';
+
+    const cardInfo = {
+        companyName,
+        postName,
+        jobDetails,
+        status: 'Rejected',
+        jobExperience
     }
-   
-    const rejectedExist = rejectedList.find(item=> item.companyName == cardInfo.companyName);
-    
+
+    const rejectedExist = rejectedList.find(item => item.companyName === companyName);
 
     if(!rejectedExist){
         rejectedList.push(cardInfo);
     }
 
-    interviewList = interviewList.filter(item=> item.companyName != cardInfo.companyName);
+    interviewList = interviewList.filter(item => item.companyName !== companyName);
 
-    if(currentStatus == "interviewCategory"){
-        renderInterview()
+    if(currentStatus === "rejectedCategory"){
+        renderReject();
+    }
+
+    if(currentStatus === "interviewCategory"){
+        renderInterview();
     }
 
     countCalculator();
 
     // renderReject ();
+    } else if(event.target.closest('.delete-btn')){
+
+    const parentNode = event.target.closest('.flex');
+    const companyName = parentNode.querySelector('.companyName').innerText;
+
+    interviewList = interviewList.filter(item => item.companyName !== companyName);
+    rejectedList = rejectedList.filter(item => item.companyName !== companyName);
+
+    parentNode.remove();
+
+    countCalculator();
+
+    if(currentStatus === "interviewCategory"){
+        renderInterview();
     }
+
+    if(currentStatus === "rejectedCategory"){
+        renderReject();
+    }
+}
 
     
 })
