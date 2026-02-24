@@ -12,6 +12,8 @@ let rejectedCount = document.getElementById("rejectedCount");
 const allCards = document.getElementById("allCards");
 const mainContainer = document.querySelector('main');
 const filterSection = document.getElementById("filtered-section");
+const emptyState = document.getElementById("empty-state");
+const filterCardContainer = document.getElementById("filter-card-container");
 
 
 function countCalculator(){
@@ -57,6 +59,7 @@ function toggleStyle(id) {
     } else if (id == 'allCategory'){
         allCards.classList.remove('hidden');
         filterSection.classList.add('hidden');
+        emptyState.classList.add('hidden');
     }else if (id == 'rejectedCategory'){
          allCards.classList.add('hidden');
          filterSection.classList.remove('hidden');
@@ -170,49 +173,91 @@ mainContainer.addEventListener('click', function(event){
 })
 
 
-function renderInterview (){
-    filterSection.innerHTML = '';
-    
-    for (let interview of interviewList){
-        console.log(interview);
-        let div = document.createElement('div');
-        div.className = 'flex justify-between bg-white p-6 rounded-lg'
+function renderInterview(){
+
+    filterCardContainer.innerHTML = "";
+
+    if(interviewList.length === 0){
+        emptyState.classList.remove('hidden');
+        return;
+    }
+
+    emptyState.classList.add('hidden');
+
+    for (const card of interviewList){
+
+        const div = document.createElement("div");
         div.innerHTML = `
-        <div class="card">
-                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1"> ${interview.companyName}</h2>
-                <p class="postName text-[#64748B] leading-6 mb-5">${interview.postName}</p>
-                <p class="jobDetails text-[#64748B] leading-5 mb-5">${interview.jobDetails}</p>
-                <button class="status bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">${interview.status}</button>
-                <p class="jobExperience text-[#323B49] mb-5 leading-5">${interview.jobExperience}</p>
+        <div class="flex justify-between bg-white p-6 rounded-lg">
+            <div class="card">
+                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1">${card.companyName}</h2>
+                <p class="postName text-[#64748B] leading-6 mb-5">${card.postName}</p>
+                <p class="jobDetails text-[#64748B] leading-5 mb-5">${card.jobDetails}</p>
+                <button class="status font-bold text-[#10B981] border-2 border-[#10B981] py-2 px-3 mb-2 rounded-lg">${card.status}</button>
+                <p class="jobExperience text-[#323B49] mb-5 leading-5">${card.jobExperience}</p>
                 <button class="btn-interview text-[#10B981] border-[#10B981] border py-2 px-3 mr-2 font-semibold text-[14px]">INTERVIEW</button>
                 <button class="btn-rejected text-[#EF4444] border-[#EF4444] border py-2 px-3 mr-2 font-semibold text-[14px]">REJECTED</button>
             </div>
-            <div class="delete-btn"><i class="fa-solid fa-trash-can"></i></div>`
-        
-        filterSection.appendChild(div);
+            <div class="delete-btn"><i class="fa-solid fa-trash-can"></i></div>
+        </div>
+        `;
+
+        filterCardContainer.appendChild(div);
     }
 }
 
-
-function renderReject (){
-    filterSection.innerHTML = '';
+// function renderInterview (){
+//     filterSection.innerHTML = '';
     
-    for (let reject of rejectedList){
-        console.log(reject);
-        let div = document.createElement('div');
-        div.className = 'flex justify-between bg-white p-6 rounded-lg'
+//     for (let interview of interviewList){
+//         console.log(interview);
+//         let div = document.createElement('div');
+//         div.className = 'flex justify-between bg-white p-6 rounded-lg'
+//         div.innerHTML = `
+//         <div class="card">
+//                 <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1"> ${interview.companyName}</h2>
+//                 <p class="postName text-[#64748B] leading-6 mb-5">${interview.postName}</p>
+//                 <p class="jobDetails text-[#64748B] leading-5 mb-5">${interview.jobDetails}</p>
+//                 <button class="status bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">${interview.status}</button>
+//                 <p class="jobExperience text-[#323B49] mb-5 leading-5">${interview.jobExperience}</p>
+//                 <button class="btn-interview text-[#10B981] border-[#10B981] border py-2 px-3 mr-2 font-semibold text-[14px]">INTERVIEW</button>
+//                 <button class="btn-rejected text-[#EF4444] border-[#EF4444] border py-2 px-3 mr-2 font-semibold text-[14px]">REJECTED</button>
+//             </div>
+//             <div class="delete-btn"><i class="fa-solid fa-trash-can"></i></div>`
+        
+//         filterSection.appendChild(div);
+//     }
+// }
+
+function renderReject(){
+
+    filterCardContainer.innerHTML = "";
+
+    if(rejectedList.length === 0){
+        emptyState.classList.remove('hidden');
+        return;
+    }
+
+    emptyState.classList.add('hidden');
+
+    for (const card of rejectedList){
+
+        const div = document.createElement("div");
         div.innerHTML = `
-        <div class="card">
-                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1"> ${reject.companyName}</h2>
-                <p class="postName text-[#64748B] leading-6 mb-5">${reject.postName}</p>
-                <p class="jobDetails text-[#64748B] leading-5 mb-5">${reject.jobDetails}</p>
-                <button class="status bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">${reject.status}</button>
-                <p class="jobExperience text-[#323B49] mb-5 leading-5">${reject.jobExperience}</p>
+        <div class="flex justify-between bg-white p-6 rounded-lg">
+            <div class="card">
+                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1">${card.companyName}</h2>
+                <p class="postName text-[#64748B] leading-6 mb-5">${card.postName}</p>
+                <p class="jobDetails text-[#64748B] leading-5 mb-5">${card.jobDetails}</p>
+                <button class="status font-bold text-[#EF4444] border-2 border-[#EF4444] py-2 px-3 mb-2 rounded-lg">${card.status}</button>
+                <p class="jobExperience text-[#323B49] mb-5 leading-5">${card.jobExperience}</p>
                 <button class="btn-interview text-[#10B981] border-[#10B981] border py-2 px-3 mr-2 font-semibold text-[14px]">INTERVIEW</button>
                 <button class="btn-rejected text-[#EF4444] border-[#EF4444] border py-2 px-3 mr-2 font-semibold text-[14px]">REJECTED</button>
             </div>
-            <div class="delete-btn"><i class="fa-solid fa-trash-can"></i></div>`
-        
-        filterSection.appendChild(div);
+            <div class="delete-btn"><i class="fa-solid fa-trash-can"></i></div>
+        </div>
+        `;
+
+        filterCardContainer.appendChild(div);
     }
 }

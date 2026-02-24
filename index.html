@@ -24,8 +24,8 @@
 </head>
 <body class="geist-font bg-[#F8FAFC]">
     <header class="w-[70%] mx-auto">
-        <h1 class="font-bold text-4xl leading-8 mb-5">Job Application Tracker</h1>
-        <div class="countContainer grid grid-cols-3 gap-4">
+        <h1 class="font-bold sm:text-3xl md:text-3xl lg:text-4xl leading-8 mb-5">Job Application Tracker</h1>
+        <div class="countContainer grid sm:grid-cols-1 md:grid-cols-3 gap-4 lg:grid-cols-3 gap-4">
 
             <div class="bg-white p-5 rounded-lg">
                 <p>Total</p>
@@ -66,6 +66,18 @@
 
     <!-- Filtered Card -->
         <section id="filtered-section" class="hidden">
+              <!-- Empty State -->
+            <div id="empty-state" class="hidden text-center py-10">
+
+                <img src="./jobs.png"
+                class="w-24 mx-auto mb-4" />
+
+                <h2 class="text-xl font-semibold">No Jobs Available</h2>
+                <p class="text-gray-500 mt-2">You haven’t added any jobs to this category yet.</p>
+            </div>
+
+    <!-- Cards will render here -->
+            <div id="filter-card-container"></div>
 
         </section>
 
