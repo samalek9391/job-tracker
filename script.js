@@ -48,3 +48,10 @@ function toggleStyle(id) {
     // step 1 finish
 
 }
+
+const mainContainer = document.querySelector('main');
+mainContainer.addEventListener('click', function(event){
+    const parentNode = event.target.parentNode.parentNode;
+    const companyName = parentNode.querySelector('.companyName').innerText;
+    console.log(companyName);
+})

@@ -46,15 +46,17 @@
 
     <hr class="text-[#E6E7E9] m-8">
 
+
+<main class="w-[70%] mx-auto">
     <!-- Available Jobs Section -->
-    <section id="available-jobs-box" class="w-[70%] mx-auto flex justify-between mb-6">
+    <section id="available-jobs-box" class="flex justify-between mb-6">
         <div id="available-job" class="text-xl">Available Jobs</div>
         <div id="jobsCount">8 jobs</div>
     </section>
 
 
      <!-- Category Button Section -->
-    <section id="categoryContainer" class="w-[70%] mx-auto mb-4">
+    <section id="categoryContainer" class="mb-4">
         <button onclick="toggleStyle('allCategory')" id="allCategory" class="font-semibold bg-[#3B82F6] text-white px-3.5 py-2.5 rounded-lg">All</button>
         <button onclick="toggleStyle('interviewCategory')" id="interviewCategory" class="font-semibold bg-white px-3.5 py-2.5 mx-2 rounded-lg">Interview</button>
         <button onclick="toggleStyle('rejectedCategory')" id="rejectedCategory" class="font-semibold bg-white px-3.5 py-2.5 rounded-lg">Rejected</button>
@@ -62,11 +64,11 @@
 
 
       <!-- Card Container -->
-    <section id="allCards" class="w-[70%] mx-auto space-y-4">
+    <section id="allCards" class="space-y-4">
         <!-- Card-1 -->
         <div class="flex justify-between bg-white p-6 rounded-lg">
             <div class="card">
-                <h2 class="font-semibold text-[18px] leading-[26px] mb-1">Mobile First Corp</h2>
+                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1">Mobile First Corp</h2>
                 <p class="text-[#64748B] leading-6 mb-5">React Native Developer</p>
                 <p class="text-[#64748B] leading-5 mb-5">Remote  •  Full-time  •  $130,000  -  $175,000</p>
                 <button class="bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">Not Applied</button>
@@ -81,7 +83,7 @@
         <!-- Card-2 -->
         <div class="flex justify-between bg-white p-6 rounded-lg">
             <div class="card">
-                <h2 class="font-semibold text-[18px] leading-[26px] mb-1">WebFlow Agency</h2>
+                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1">WebFlow Agency</h2>
                 <p class="text-[#64748B] leading-6 mb-5">Web Designer & Developer</p>
                 <p class="text-[#64748B] leading-5 mb-5">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
                 <button class="bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">Not Applied</button>
@@ -96,7 +98,7 @@
         <!-- Card-3 -->
         <div class="flex justify-between bg-white p-6 rounded-lg">
             <div class="card">
-                <h2 class="font-semibold text-[18px] leading-[26px] mb-1">DataViz Solutions</h2>
+                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1">DataViz Solutions</h2>
                 <p class="text-[#64748B] leading-6 mb-5">Data Visualization Specialist</p>
                 <p class="text-[#64748B] leading-5 mb-5">Boston, MA • Full-time • $125,000 - $165,000</p>
                 <button class="bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">Not Applied</button>
@@ -110,7 +112,7 @@
         <!-- Card-4 -->
         <div class="flex justify-between bg-white p-6 rounded-lg">
             <div class="card">
-                <h2 class="font-semibold text-[18px] leading-[26px] mb-1">CloudFirst Inc</h2>
+                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1">CloudFirst Inc</h2>
                 <p class="text-[#64748B] leading-6 mb-5">Backend Developer</p>
                 <p class="text-[#64748B] leading-5 mb-5">Seattle, WA • Full-time • $140,000 - $190,000</p>
                 <button class="bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">Not Applied</button>
@@ -125,7 +127,7 @@
         <!-- Card-5 -->
         <div class="flex justify-between bg-white p-6 rounded-lg">
             <div class="card">
-                <h2 class="font-semibold text-[18px] leading-[26px] mb-1">Innovation Labs</h2>
+                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1">Innovation Labs</h2>
                 <p class="text-[#64748B] leading-6 mb-5">UI/UX Engineer</p>
                 <p class="text-[#64748B] leading-5 mb-5">Austin, TX • Full-time • $110,000 - $150,000</p>
                 <button class="bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">Not Applied</button>
@@ -140,7 +142,7 @@
         <!-- Card-6 -->
         <div class="flex justify-between bg-white p-6 rounded-lg">
             <div class="card">
-                <h2 class="font-semibold text-[18px] leading-[26px] mb-1">MegaCorp Solutions</h2>
+                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1">MegaCorp Solutions</h2>
                 <p class="text-[#64748B] leading-6 mb-5">JavaScript Developer</p>
                 <p class="text-[#64748B] leading-5 mb-5">New York, NY • Full-time • $130,000 - $170,00</p>
                 <button class="bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">Not Applied</button>
@@ -155,7 +157,7 @@
         <!-- Card-7 -->
         <div class="flex justify-between bg-white p-6 rounded-lg">
             <div class="card">
-                <h2 class="font-semibold text-[18px] leading-[26px] mb-1">StartupXYZ</h2>
+                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1">StartupXYZ</h2>
                 <p class="text-[#64748B] leading-6 mb-5">Full Stack Engineer</p>
                 <p class="text-[#64748B] leading-5 mb-5">Remote • Full-time • $120,000 - $160,000</p>
                 <button class="bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">Not Applied</button>
@@ -170,7 +172,7 @@
         <!-- Card-8 -->
         <div class="flex justify-between bg-white p-6 rounded-lg mb-15">
             <div class="card">
-                <h2 class="font-semibold text-[18px] leading-[26px] mb-1">TechCorp Industries</h2>
+                <h2 class="companyName font-semibold text-[18px] leading-[26px] mb-1">TechCorp Industries</h2>
                 <p class="text-[#64748B] leading-6 mb-5">Senior Frontend Developer</p>
                 <p class="text-[#64748B] leading-5 mb-5">San Francisco, CA • Full-time • $130,000 - $175,000</p>
                 <button class="bg-[#EEF4FF] text-[#002C5C] py-2 px-3 mb-2 rounded-b-lg">Not Applied</button>
@@ -182,6 +184,8 @@
         </div>
         
     </section>
+
+</main>
 
     <script src="./script.js"></script>
 </body>
